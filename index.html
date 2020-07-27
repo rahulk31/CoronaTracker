@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./main.css">
+  <title>Corona Tracker</title>
+</head>
+<body>
+
+  <div class="main">
+    <!--Head Navbar-->
+    <nav id="nav-bar">
+      <div>
+        <img src="./virus.png" class="logo" width="50px" height="50px">
+        <h1 class="mheading">COVID-19</h1>
+      </div>
+      <ul>
+        <!-- <li><a href="#">FAQs</a></li> -->
+        <li><a href="https://api.covid19api.com">Source API</a></li>
+      </ul>
+    </nav>
+
+    <!--Search Country Section-->
+    <div class="search-country">
+      <label for ="country" class="mheading">Enter Country</label>
+      <select id="country" class="country" onchange="getdata()">
+      </select>
+   </div>
+     <script>
+         const COUNTRIES = ["Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burma","Burundi","Cabo Verde","Cambodia","Cameroon","Canada","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo (Brazzaville)","Congo (Kinshasa)","Costa Rica","Cote d'Ivoire","Croatia","Cuba","Cyprus","Czechia","Denmark","Diamond Princess","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Holy See","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Korea, South","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","MS Zaandam","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania","Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Namibia","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Macedonia","Norway","Oman","Pakistan","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Somalia","South Africa","South Sudan","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan*","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Trinidad and Tobago","Tunisia","Turkey","US","Uganda","Ukraine","United Arab Emirates","United Kingdom","Uruguay","Uzbekistan","Venezuela","Vietnam","West Bank and Gaza","Western Sahara","Yemen","Zambia","Zimbabwe"];
+   for(let i=0;i<COUNTRIES.length;i++){
+       var x = document.getElementById("country");
+               var option = document.createElement("option");
+               option.text = COUNTRIES[i];
+       option.setAttribute("value",COUNTRIES[i]);
+               x.add(option);
+         }
+     </script>
+
+    <section class="title-div">
+      <h1 class="title">INDIA</h1>
+    </section>
+
+    <!--Data Section-->
+    <section class="data-display">
+      <div class="cards">
+        <p class="lheading">Confirmed</p>
+        <p class="numbers1">14,25,245</p>
+        <p class="small-numbers lheading" id="newConfirmed">+19,250</p>
+      </div>
+      <div class="cards">
+        <p class="lheading">Recovered</p>
+        <p class="numbers2">10,25,456</p>
+        <p class="small-numbers lheading" id="newRecovered">+1,084</p>
+      </div>
+      <div class="cards">
+        <p class="lheading">Deaths</p>
+        <p class="numbers3">33,691</p>
+        <p class="small-numbers lheading" id="newDeaths">+192</p>
+      </div>
+    </section>
+
+
+
+  
+    <footer class="footer">
+      <p class="mheading">&copy Developed By Rahul | 2020</p>
+    </footer>
+  </div>
+
+
+  <script src="./app.js"></script>
+</body>
+</html>
